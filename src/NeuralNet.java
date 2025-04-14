@@ -64,8 +64,6 @@ public class NeuralNet {
         return output;
     }
     public void backprop_error(double[] expected_output){
-
-
         for (int i = 0; i < expected_output.length; i++) {
             double d = expected_output[i];
             if (d < 0 || d > 1) {
@@ -78,10 +76,10 @@ public class NeuralNet {
             }
         }
         for (int i=0;i<output.length;i++){
-
-        }
-        for (int i=0;i<hidden_layer_output.length;i++){
-
+            double error=0;
+            for (int j=0;j<hidden_layer_output.length;j++){
+                
+            }
         }
     }
 }
