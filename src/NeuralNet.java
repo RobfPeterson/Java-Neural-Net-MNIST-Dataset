@@ -48,7 +48,7 @@ public class NeuralNet {
         }
         return ar;
     }
-    private double[][] initializeWeights(int x, int y, double lowerBound, double upperBound){
+    public double[][] initializeWeights(int x, int y, double lowerBound, double upperBound){
         if(x < 1 || y < 1){
             return null;
         }
@@ -91,7 +91,7 @@ public class NeuralNet {
         if (input.isEmpty()) {
             throw new IllegalStateException("inputBatch and targetBatch should not be empty");
         }
-        double[][] weightsSum=;
+        double[][] weightsSum;
         double[] biasSum;
     }
     public void backprop_error(double[] expected_output) {
