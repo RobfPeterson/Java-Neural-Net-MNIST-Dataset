@@ -18,9 +18,9 @@ public class TrainSet {
     }
 
     public TrainSet extractBatch(int size) {
-        if (size > 0 && size <= data.size()) {
+        if (size > 0 && size <= this.size()) {
             TrainSet set = new TrainSet(inputSize, outputSize);
-            Integer[] ids = randomValues(0, data.size() - 1, size);
+            Integer[] ids = randomValues(0, this.size() - 1, size);
             for (Integer i : ids) {
                 set.addData(this.getInput(i), this.getOutput(i));
             }
@@ -48,13 +48,13 @@ public class TrainSet {
     }
 
     public double[] getInput(int index) {
-        if (index >= 0 && index < data.size())
+        if (index >= 0 && index < size())
             return data.get(index)[0];
         else return null;
     }
 
     public double[] getOutput(int index) {
-        if (index >= 0 && index < data.size())
+        if (index >= 0 && index < size())
             return data.get(index)[1];
         else return null;
     }
@@ -96,5 +96,8 @@ public class TrainSet {
             index++;
         }
         return s;
+    }
+    public int size() {
+        return data.size();
     }
 }

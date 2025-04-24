@@ -18,7 +18,6 @@ public class MnistMatrix {
     public int getnRows() {
         return nRows;
     }
-
     public int getnCols() {
         return nCols;
     }
